@@ -1,0 +1,21 @@
+{ 
+    "name": "Ferreteria Ferme", 
+    "short_name": "Ferme", 
+    "description": "Sistema de gestion de ferreteria ferme", 
+    "start_url": "/", 
+    "display": "standalone", 
+    "scope": "/", 
+    "orientation": "any", 
+    "background_color": "#909090", 
+    "theme_color": "#FF9550", 
+    "status_bar": "default", 
+    "icons": [
+        {
+            "src": "/static/images/Ferme-logo.png", 
+            "sizes": "512x512", 
+            "purpose": "any maskable"
+        }
+    ],
+    "dir": "ltr", 
+    "lang": "es" 
+}
