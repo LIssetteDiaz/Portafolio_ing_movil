@@ -24,7 +24,7 @@ urlpatterns = [
     path('', include('pwa.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('/inicio', views.Index, name="index"),
+    path('inicio/', views.Index, name="index"),
     path('', views.Ingreso, name="ingreso"),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
