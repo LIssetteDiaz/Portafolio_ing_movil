@@ -23,6 +23,7 @@ from .models import (
     Direccioncliente
 )
 
+@login_required(login_url="ingreso")
 def Index(request):
 
     if request.POST.get('VerPerfil') is not None:
