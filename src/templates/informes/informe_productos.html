@@ -120,8 +120,8 @@
                     <div class="col-md-4 text-center border border-dark rounded">
                         <br>
                         <label for="">Para descargar el informe debe seleccionar un formato de documento, para obtener una vista previa del informe solo se puede en formato PDF:</label></br></br>
-                        <button type="submit" name="vistaPrevia" value="vistaPrevia" id="vistaPrevia" class="btn btn-primary">Vista previa</button><br><br>
-                        <button type="submit" name="descargarInforme" value="descargarInforme" id="descargarInforme" class="btn btn-primary">Descargar</button><br><br>
+                        <button type="submit" name="vistaPrevia" value="vistaPrevia" id="vistaPrevia" class="btn btn-primary cargando" onclick="Cargando(this)">Vista previa</button><br><br>
+                        <button type="submit" name="descargarInforme" value="descargarInforme" id="descargarInforme" class="btn btn-primary cargando" onclick="Cargando(this)">Descargar</button><br><br>
                     </div>
                     <div class="col-md-2">
                     </div>
@@ -153,6 +153,16 @@
     }
 
 </script>
+
+<script>
+    function Cargando(){
+      let boton = document.getElementsByClassName("cargando");
+      let formulario = document.getElementById("formulario")
+      boton.innerHTML = 'Cargando...';
+      boton.disabled = true;
+      formulario.submit();
+    }
+  </script>
 
 <script language="JavaScript">
    
