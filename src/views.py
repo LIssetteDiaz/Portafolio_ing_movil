@@ -346,20 +346,28 @@ def informe_productos(request):
             if tipoInforme == "informeExcel":
                 
                 nombre_archivo = "Productos"
-                if visitas == []:
-                    return  creacion_excel(nombre_archivo, lista)
-                else:
-                    return  creacion_excel(nombre_archivo, lista, visitas)
+                tipo_doc = 'ms-excel'
+                extension = 'xlsx'
+                
+                return  creacion_excel(nombre_archivo, lista, tipo_doc, extension)
+                
+                    
 
             if tipoInforme == "informePdf":
 
                 tipo_doc = 'pdf'
                 extension = 'pdf'
                 nombre = 'Informe Productos'
-                if df.shape[1] > 6:
-                    return creacion_pdf(lista_productos,tipo_doc,A4,nombre,extension, lista_productos2, valor=False)
+                if vistaPrevia:
+                    if df.shape[1] > 6:
+                        return creacion_pdf(lista_productos,tipo_doc,A4,nombre,extension, lista_productos2, valor=False)
+                    else:
+                        return creacion_pdf(lista_productos,tipo_doc,A4,nombre,extension,valor=False)
                 else:
-                    return creacion_pdf(lista_productos,tipo_doc,A4,nombre,extension,valor=False)
+                    if df.shape[1] > 6:
+                        return creacion_pdf(lista_productos,tipo_doc,A4,nombre,extension, lista_productos2, valor=True)
+                    else:
+                        return creacion_pdf(lista_productos,tipo_doc,A4,nombre,extension,valor=True)
 
             if tipoInforme == "informeWord": 
 
@@ -467,20 +475,27 @@ def informe_proveedores(request):
             if tipoInforme == "informeExcel":
                 
                 nombre_archivo = "Proveedores"
-                if visitas == []:
-                    return  creacion_excel(nombre_archivo, lista_proveedores)
-                else:
-                    return  creacion_excel(nombre_archivo, lista_proveedores, visitas)
+                tipo_doc = 'ms-excel'
+                extension = 'xlsx'
+
+                return  creacion_excel(nombre_archivo, lista_proveedores, tipo_doc, extension)
+                
                 
             if tipoInforme == "informePdf":
 
                 tipo_doc = 'pdf'
                 extension = 'pdf'
                 nombre = 'Informe Proveedores'
-                if df.shape[1] >= 6:
-                    return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension, lista_proveedores2, valor=False)
+                if vistaPrevia:
+                    if df.shape[1] >= 6:
+                        return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension, lista_proveedores2, valor=False)
+                    else:
+                        return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension,valor=False)
                 else:
-                    return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension,valor=False)
+                    if df.shape[1] >= 6:
+                        return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension, lista_proveedores2, valor=True)
+                    else:
+                        return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension,valor=True)
 
             if tipoInforme == "informeWord": 
 
@@ -591,16 +606,20 @@ def informe_pedidos(request):
             
             if tipoInforme == "informeExcel":
                 nombre_archivo = "Pedidos"
-                if visitas == []:
-                    return  creacion_excel(nombre_archivo, lista_proveedores)
-                else:
-                    return  creacion_excel(nombre_archivo, lista_proveedores, visitas)
+                tipo_doc = 'ms-excel'
+                extension = 'xlsx'
+
+                creacion_excel(nombre_archivo, lista_proveedores, tipo_doc, extension)
+                
 
             if tipoInforme == "informePdf":
                 tipo_doc = 'pdf'
                 extension = 'pdf'
                 nombre = 'Informe Pedidos'
-                return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension, valor=False)
+                if vistaPrevia:
+                    return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension, valor=False)
+                else:
+                    return creacion_pdf(lista_proveedores,tipo_doc,A4,nombre,extension, valor=True)
 
             if tipoInforme == "informeWord": 
                 tipo_doc = 'ms-word'
@@ -725,19 +744,26 @@ def informe_ventas(request):
 
             if tipoInforme == "informeExcel":
                 nombre_archivo = "Informe Detallado Ventas"
-                if visitas == []:
-                    return  creacion_excel(nombre_archivo, lista_ventas)
-                else:
-                    return  creacion_excel(nombre_archivo, lista_ventas, visitas)
+                tipo_doc = 'ms-excel'
+                extension = 'xlsx'
+
+                return  creacion_excel(nombre_archivo, lista_ventas, tipo_doc, extension)
+                
 
             if tipoInforme == "informePdf":
                 tipo_doc = 'pdf'
                 extension = 'pdf'
                 nombre = 'Informe Detallado Ventas'
-                if df.shape[1] > 5:
-                    return creacion_pdf(lista_ventas,tipo_doc,A4,nombre,extension, lista_ventas2, valor=False)
+                if vistaPrevia:
+                    if df.shape[1] > 5:
+                        return creacion_pdf(lista_ventas,tipo_doc,A4,nombre,extension, lista_ventas2, valor=False)
+                    else:
+                        return creacion_pdf(lista_ventas,tipo_doc,A4,nombre,extension,valor=False)
                 else:
-                    return creacion_pdf(lista_ventas,tipo_doc,A4,nombre,extension,valor=False)
+                    if df.shape[1] > 5:
+                        return creacion_pdf(lista_ventas,tipo_doc,A4,nombre,extension, lista_ventas2, valor=True)
+                    else:
+                        return creacion_pdf(lista_ventas,tipo_doc,A4,nombre,extension,valor=True)
 
             if tipoInforme == "informeWord": 
                 tipo_doc = 'ms-word'
@@ -853,19 +879,25 @@ def informe_visitas(request):
                 
             if tipoInforme == "informeExcel":
                 nombre_archivo = "Pedidos"
-                if visitas == []:
-                    return  creacion_excel(nombre_archivo, lista_visitas)
-                else:
-                    return  creacion_excel(nombre_archivo, lista_visitas, visitas)
+                tipo_doc = 'ms-excel'
+                extension = 'xlsx'
+                return  creacion_excel(nombre_archivo, lista_visitas, tipo_doc, extension)
+                
 
             if tipoInforme == "informePdf":
                 tipo_doc = 'pdf'
                 extension = 'pdf'
                 nombre = 'Informe Pedidos'
-                if df.shape[1] > 6:
-                    return creacion_pdf(lista_visitas,tipo_doc,A4,nombre,extension, lista_visitas2, valor=False)
+                if vistaPrevia:
+                    if df.shape[1] > 6:
+                        return creacion_pdf(lista_visitas,tipo_doc,A4,nombre,extension, lista_visitas2, valor=False)
+                    else:
+                        return creacion_pdf(lista_visitas,tipo_doc,A4,nombre,extension,valor=False)
                 else:
-                    return creacion_pdf(lista_visitas,tipo_doc,A4,nombre,extension,valor=False)
+                    if df.shape[1] > 6:
+                        return creacion_pdf(lista_visitas,tipo_doc,A4,nombre,extension, lista_visitas2, valor=True)
+                    else:
+                        return creacion_pdf(lista_visitas,tipo_doc,A4,nombre,extension,valor=True)
 
             if tipoInforme == "informeWord": 
                 tipo_doc = 'ms-word'
