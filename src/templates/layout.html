@@ -40,10 +40,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="/informes" class="nav-link fw-bolder text-black">Informes</a>
+                            <a href="/informes" class="nav-link fw-bolder text-black" id="cargando1" type="button" onclick="Cargando1(this)">Informes</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/dashboard" class="nav-link fw-bolder text-black">Dashboard</a>
+                            <!-- <button></button> -->
+                            <a href="/dashboard" class="nav-link fw-bolder text-black" id="cargando2" type="button" onclick="Cargando2(this)">Dashboard</a>
                         </li>
                     </ul>
                     
@@ -82,4 +83,16 @@
         
         
     </body>
+    <script>
+        function Cargando1(){
+          let boton = document.getElementById("cargando1");
+          boton.innerHTML = 'Cargando...';
+          boton.disabled = true;
+        }
+        function Cargando2(){
+          let boton = document.getElementById("cargando2");
+          boton.innerHTML = 'Cargando...';
+          boton.disabled = true;
+        }
+      </script>
 </html>
