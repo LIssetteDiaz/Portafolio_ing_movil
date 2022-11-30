@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/seleccion_registro.css' %}">
+    
+    <div class="container text-center caja rounded mt-5 mb-5">
+        
+        <div>
+            <h1 class="text-center p-2 pt-3" id="titulo">Seleccione el informe requerido</h1>
+        </div>
+        
+
+        <div class="seleccion p-2" id="botones">
+            <a type="button" href="{% url 'informe_productos' %}" class="btn link m-3 p-4">
+                <div class="border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-dark">
+                        <h2 class="card-title">Informe de <br> Productos</h2>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </a>
+            
+            <a type="button" href="{% url 'informe_pedidos' %}" class="btn link m-3 p-4">
+                <div class="border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-dark">
+                        <h2 class="card-title">Informe de <br> Pedidos</h2>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </a>
+            <a type="button" href="{% url 'informe_proveedores' %}" class="btn link m-3 p-4">
+                <div class="border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-dark">
+                        <h2 class="card-title">Informe de <br> Proveedores</h2>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </a>
+            <a type="button" href="{% url 'informe_ventas' %}" class="btn link m-3 p-4">
+                <div class="border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-dark">
+                        <h2 class="card-title">Informe de <br> Ventas</h2>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </a>
+            <a type="button" href="{% url 'informe_visitas' %}" class="btn link m-3 p-4">
+                <div class="border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body text-dark">
+                        <h2 class="card-title">Informe de <br> Visitas</h2>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+        
+    </div>
+    
+    <!-- <script src="{% static 'js/registro_clientes.js' %}"></script> -->
+
+{% endblock %}

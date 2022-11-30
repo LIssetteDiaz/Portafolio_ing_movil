@@ -27,6 +27,14 @@ urlpatterns = [
     path('inicio/', views.Index, name="index"),
     path('', views.Ingreso, name="ingreso"),
 
+    path('informes/productos', views.informe_productos, name="informe_productos"),
+    path('informes/proveedores', views.informe_proveedores, name="informe_proveedores"),
+    path('informes/pedidos', views.informe_pedidos, name="informe_pedidos"),
+    path('informes/ventas', views.informe_ventas, name="informe_ventas"),
+    path('informes/visitas', views.informe_visitas, name="informe_visitas"),
+    path('informes', views.Seleccion_informe, name="informes"),
+    path('dashboard', views.dashboard, name="dashboard"),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
