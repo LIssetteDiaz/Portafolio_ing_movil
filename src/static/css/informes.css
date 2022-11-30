@@ -1,0 +1,29 @@
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    
+}
+
+.caja {
+    max-width: 90%;
+    width: 90%;
+    max-height: 90%;
+    background-color: #D9D9D9;
+}
+
+.btn {
+    background-color: #FF9550!important;
+}
+
+#contenido-informe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

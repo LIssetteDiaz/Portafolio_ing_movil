@@ -1,0 +1,29 @@
+.link{
+    color: black;
+    text-decoration: none;
+}
+
+.caja {
+    
+    max-width: 90%;
+    width: 90%;
+    max-height: 90%;
+    background-color: #D9D9D9;
+}
+
+.seleccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    background-color: #FF9550!important;
+}
+
